@@ -20,10 +20,9 @@ const createChatLi = (message, className) => {
 
 const generateResponse = (chatElement) => {
     const API_URL = "http://localhost:8000/chatbot/bot-response/";
-    // const API_URL = "https://api.openai.com/v1/chat/completions";
     const messageElement = chatElement.querySelector("p");
 
-    // Define the properties and message for the API request
+    // API request
     const requestOptions = {
         method: "POST",
         headers: {
@@ -36,7 +35,7 @@ const generateResponse = (chatElement) => {
         )
     }
 
-    // Send POST request to API
+    // Send POST for training
     fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
         messageElement.textContent = data;
     }).catch(() => {

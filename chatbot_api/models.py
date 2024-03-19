@@ -11,3 +11,9 @@ class BotResponse(models.Model):
 
     def __str__(self) -> str:
         return f"{self.id} -- {self.response_type}"
+    
+
+class DashboardImage(models.Model):
+    image = models.ImageField(upload_to="dashboard_image")
+
+
