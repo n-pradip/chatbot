@@ -1,17 +1,13 @@
-# from rest_framework import serializers
-# from.models import TrainModel
-
-# class TrainModelSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = TrainModel
-#         fields = '__all__'
-
 from rest_framework import serializers
-from .models import BotResponse
+from .models import BotResponse,FaqsModel
 
 class BotResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = BotResponse
         fields = '__all__'
 
+class FaqsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FaqsModel
+        fields=  '__all__'
 

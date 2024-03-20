@@ -1,11 +1,13 @@
 from django.urls import path,include
-from .views import BotResponseViewSet
+from .views import BotResponseViewSet,FaqsViewset
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
 # router.register(r'train', TrainModelVeiwset, basename='train_data_input')
 router.register(r'bot-responses', BotResponseViewSet, basename='bot-responses')
+router.register(r'faqs', FaqsViewset, basename='frequently-asked-questions')
+
 
 
 urlpatterns = [

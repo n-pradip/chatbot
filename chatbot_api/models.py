@@ -16,4 +16,11 @@ class BotResponse(models.Model):
 class DashboardImage(models.Model):
     image = models.ImageField(upload_to="dashboard_image")
 
+class FaqsModel(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+
+    def __str__(self) -> str:
+        return f"{self.id} .> {self.question}"
+
 

@@ -5,8 +5,8 @@ from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import viewsets
-from .models import BotResponse
-from .serializers import BotResponseSerializer
+from .models import BotResponse, FaqsModel
+from .serializers import BotResponseSerializer, FaqsSerializer
 
 class BotResponseViewSet(viewsets.ModelViewSet):
     queryset = BotResponse.objects.all()
@@ -82,3 +82,7 @@ class BotResponseViewSet(viewsets.ModelViewSet):
             return Response(response_data.data[response_index]["bot_response"], status=status.HTTP_200_OK)
 
         return Response(self.random_string(), status=status.HTTP_200_OK)
+    
+class FaqsViewset(viewsets.ModelViewSet):
+    queryset = FaqsModel.objects.all()
+    serializer_class = FaqsSerializer
